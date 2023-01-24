@@ -1,23 +1,21 @@
-function ListaTareas() {
-    return (
-      <ul>
-        <li>
-          <span className="done">
-            Explicar JSX
-          </span>
-        </li>
-        <li>
-          <span>
-            Explicar a profundidad VirtualDOM
-          </span>
-        </li>
-        <li>
-          <span className="done">
-            Explicar qué es un componente
-          </span>
-        </li>
-      </ul>
-    )
+import Tarea from "./Tarea"
+
+function ListaTareas(props) {
+  return (
+    <ul>
+      {
+        props.tareas.map((elemento, indice) => {
+          return (
+            <Tarea
+              key={indice}
+              hecho={elemento.hecho}
+              titulo={elemento.titulo}
+            />
+          )
+        })
+      }
+    </ul>
+  )
 }
 
 export default ListaTareas;

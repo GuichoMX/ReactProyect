@@ -1,9 +1,9 @@
 import ListaTareas from "./ListaTareas";
 
-function Cuerpo() {
+function Cuerpo(props) {
     return (
         <main>
-            <ListaTareas />
+            <ListaTareas tareas={props.tareas}/>
         </main>
     )
 }
