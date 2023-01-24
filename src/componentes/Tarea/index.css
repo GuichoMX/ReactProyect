@@ -1,0 +1,13 @@
+.done {
+    text-decoration: line-through;
+}
+
+.li {
+    margin: 0.5em 0;
+}
+
+.secondary-text {
+    float: right;
+    font-size: .75em;
+    opacity: .5;
+}
