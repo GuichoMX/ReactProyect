@@ -27,6 +27,9 @@ const tareasIniciales = [
 
 function App() {
   const [tareas, ponerTareas] = React.useState(tareasIniciales);
+  // true sirve para el tema light
+  // false para el tema dark
+  const [toggle, setToggle] = React.useState(true);
 
   const modificarTarea = (id, propiedad, valor) => {
     const copiaTareas = [...tareas];
@@ -35,10 +38,10 @@ function App() {
   };
 
   return (
-    <>
-      <Encabezado tareas={tareas} />
+    <div className={`wrapper ${toggle ? "" : "dark"}`}>
+      <Encabezado tareas={tareas} toggle={toggle} setToggle={setToggle} />
       <Cuerpo tareas={tareas} modificarTarea={modificarTarea} />
-    </>
+    </div>
   );
 }
 
