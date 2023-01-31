@@ -1,7 +1,7 @@
 import React from "react";
-import PropTypes from "prop-types"
 
 import "./index.css"
+import { Tarea as TareaShape } from "../../prop-types";
 
 function Tarea(props) {
     const classNameHecho = props.hecho ? "done" : "";
@@ -28,11 +28,6 @@ function Tarea(props) {
     )
   }
 
-Tarea.propTypes = {
-  titulo: PropTypes.string.isRequired,
-  hecho: PropTypes.bool.isRequired,
-  hora: PropTypes.string.isRequired,
-  detalles: PropTypes.array,
-}
+Tarea.propTypes = {...TareaShape};
 
 export default Tarea;

@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 import "./index.css"
 import Tarea from "../Tarea"
+import { TareaType } from "../../prop-types";
 
 function ListaTareas(props) {
   return (
@@ -24,12 +25,7 @@ function ListaTareas(props) {
 
 ListaTareas.propTypes = {
   modificarTarea: PropTypes.func.isRequired,
-  tareas: PropTypes.arrayOf(PropTypes.shape({
-    titulo: PropTypes.string.isRequired,
-    hecho: PropTypes.bool.isRequired,
-    hora: PropTypes.string.isRequired,
-    detalles: PropTypes.array,
-  })).isRequired,
+  tareas: PropTypes.arrayOf(TareaType).isRequired,
 };
 
 export default ListaTareas;
