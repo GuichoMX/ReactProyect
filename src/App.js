@@ -25,9 +25,46 @@ const tareasIniciales = [
   }
 ];
 
+const estadoInicial = "light";
+const calcularSiguienteEstado = (estado) => {
+  switch (estado) {
+      case "light":
+          return "medium";
+      case "medium":
+          return "dark";
+      case "dark":
+          return "light";
+      default:
+          return "";
+  }
+};
+const calcularPrevioEstado = (estado) => {
+  switch (estado) {
+      case "light":
+          return "dark";
+      case "medium":
+          return "light";
+      case "dark":
+          return "medium";
+      default:
+          return "";
+  }
+};
+const reductor = (estado, accion) => {
+  switch(accion.tipo) {
+    case "siguiente":
+      return calcularSiguienteEstado(estado);
+    case "previo":
+      return calcularPrevioEstado(estado);
+    default:
+      throw new Error(`Acción desconocida: ${accion.tipo}`)
+  }
+};
+
 function App() {
   const [tareas, ponerTareas] = React.useState(tareasIniciales);
-  const [toggle, setToggle] = React.useState("light");
+  // const [toggle, setToggle] = React.useState("light");
+  const [toggle, setToggle] = React.useReducer(reductor, estadoInicial);
 
   const modificarTarea = (id, propiedad, valor) => {
     const copiaTareas = [...tareas];

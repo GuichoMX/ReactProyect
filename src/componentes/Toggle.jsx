@@ -1,33 +1,15 @@
 function Toggle(props) {
-    const handleClick = (evt) => {
+    const handleClick = (evt, tipo) => {
         evt.preventDefault();
-
-        let next;
-        // if (props.toggle === "light") {
-        //     next = "medium";
-        // } else if (props.toggle === "medium") {
-        //     next = "dark";
-        // } else if (props.toggle === "dark") {
-        //     next = "light";
-        // }
-        switch (props.toggle) {
-            case "light":
-                next = "medium";
-                break;
-            case "medium":
-                next = "dark";
-                break;
-            case "dark":
-                next = "light";
-                break;
-            default:
-        }
-
-        props.setToggle(next);
+        props.setToggle({ tipo });
     };
 
     return (
-        <button onClick={handleClick}>{props.toggle}</button>
+        <>
+            <button onClick={(e) => handleClick(e, "previo")}>previo</button>
+            <button onClick={(e) => handleClick(e, "siguiente")}>siguiente</button>
+        </>
+
     )
 }
 
