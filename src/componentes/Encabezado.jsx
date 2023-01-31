@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 import Titulo from "./Titulo";
 import Toggle from "./Toggle";
 
@@ -14,6 +16,17 @@ function Encabezado(props) {
       <Toggle toggle={props.toggle} setToggle={props.setToggle} />
     </>
   )
-}
+};
+
+Encabezado.propTypes = {
+  toggle: PropTypes.string.isRequired,
+  setToggle: PropTypes.func.isRequired,
+  tareas: PropTypes.arrayOf(PropTypes.shape({
+    titulo: PropTypes.string.isRequired,
+    hecho: PropTypes.bool.isRequired,
+    hora: PropTypes.string.isRequired,
+    detalles: PropTypes.array,
+  })).isRequired,
+};
 
 export default Encabezado;

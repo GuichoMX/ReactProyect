@@ -1,4 +1,6 @@
 import React from "react";
+import PropTypes from "prop-types"
+
 import "./index.css"
 
 function Tarea(props) {
@@ -25,5 +27,12 @@ function Tarea(props) {
       </li>
     )
   }
+
+Tarea.propTypes = {
+  titulo: PropTypes.string.isRequired,
+  hecho: PropTypes.bool.isRequired,
+  hora: PropTypes.string.isRequired,
+  detalles: PropTypes.array,
+}
 
 export default Tarea;

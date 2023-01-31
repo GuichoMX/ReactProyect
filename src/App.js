@@ -6,7 +6,7 @@ const tareasIniciales = [
   {
     titulo: "Explicar JSX",
     hecho: true,
-    hora: "7:00 am"
+    hora: "7:00 am",
   },
   {
     titulo: "Explicar a profundidad VirtualDOM",

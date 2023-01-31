@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 function Toggle(props) {
     const handleClick = (evt, tipo) => {
         evt.preventDefault();
@@ -11,6 +13,10 @@ function Toggle(props) {
         </>
 
     )
-}
+};
+
+Toggle.propTypes = {
+    setToggle: PropTypes.func.isRequired
+};
 
 export default Toggle;
