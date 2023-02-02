@@ -12,7 +12,7 @@ function Cuerpo(props) {
 };
 
 Cuerpo.propTypes = {
-    modificarTarea: PropTypes.func.isRequired,
+    ponerTareas: PropTypes.func.isRequired,
     tareas: PropTypes.arrayOf(TareaType).isRequired,
 };
 

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from "prop-types";
 
 import "./index.css"
 import { Tarea as TareaShape } from "../../prop-types";
@@ -12,7 +13,7 @@ function Tarea(props) {
           type="checkbox"
           checked={props.hecho}
           onChange={(evt) => {
-            props.modificarTarea(props.id, "hecho", !props.hecho);
+            props.ponerTareas({ tipo: props.hecho ? "quitarHecho" : "ponerHecho", id: props.id });
           }}
         />
         <span
@@ -28,6 +29,9 @@ function Tarea(props) {
     )
   }
 
-Tarea.propTypes = {...TareaShape};
+Tarea.propTypes = {
+  ...TareaShape,
+  ponerTareas: PropTypes.func.isRequired
+};
 
 export default Tarea;

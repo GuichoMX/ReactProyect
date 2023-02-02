@@ -24,6 +24,20 @@ const tareasIniciales = [
     hora: "2:13 pm"
   }
 ];
+const reductorTareas = (estado, accion) => {
+  const nuevoEstado = [...estado];
+
+  switch(accion.tipo) {
+    case "ponerHecho":
+      nuevoEstado[accion.id].hecho = true;
+      return nuevoEstado;
+    case "quitarHecho":
+      nuevoEstado[accion.id].hecho = false;
+      return nuevoEstado;
+    default:
+      throw new Error(`Acción desconocida: ${accion.tipo}`);
+  }
+};
 
 const estadoInicial = "light";
 const calcularSiguienteEstado = (estado) => {
@@ -62,20 +76,13 @@ const reductor = (estado, accion) => {
 };
 
 function App() {
-  const [tareas, ponerTareas] = React.useState(tareasIniciales);
-  // const [toggle, setToggle] = React.useState("light");
+  const [tareas, ponerTareas] = React.useReducer(reductorTareas, tareasIniciales);
   const [toggle, setToggle] = React.useReducer(reductor, estadoInicial);
-
-  const modificarTarea = (id, propiedad, valor) => {
-    const copiaTareas = [...tareas];
-    copiaTareas[id][propiedad] = valor;
-    ponerTareas(copiaTareas);
-  };
 
   return (
     <div className={`wrapper ${toggle}`}>
       <Encabezado tareas={tareas} toggle={toggle} setToggle={setToggle} />
-      <Cuerpo tareas={tareas} modificarTarea={modificarTarea} />
+      <Cuerpo tareas={tareas} ponerTareas={ponerTareas} />
     </div>
   );
 }

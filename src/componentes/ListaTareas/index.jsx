@@ -12,7 +12,7 @@ function ListaTareas(props) {
           return (
             <Tarea
               key={indice}
-              modificarTarea={props.modificarTarea}
+              ponerTareas={props.ponerTareas}
               id={indice}
               {...elemento}
             />
@@ -24,7 +24,7 @@ function ListaTareas(props) {
 };
 
 ListaTareas.propTypes = {
-  modificarTarea: PropTypes.func.isRequired,
+  ponerTareas: PropTypes.func.isRequired,
   tareas: PropTypes.arrayOf(TareaType).isRequired,
 };
 
