@@ -33,4 +33,6 @@ h1 {
 
 .wrapper {
   height: 100vh;
+  margin: 5em auto 0;
+  width: 50vw;
 }

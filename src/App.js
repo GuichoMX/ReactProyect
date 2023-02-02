@@ -1,20 +1,23 @@
 import React from "react";
 import Cuerpo from "./componentes/Cuerpo";
 import Encabezado from "./componentes/Encabezado";
-import { URL } from "./constantes";
+import { baseURL } from "./constantes";
 
 const reductorTareas = (estado, accion) => {
   const nuevoEstado = [...estado];
+  const indice = estado.findIndex(elemento => elemento.id === accion.id);
 
   switch(accion.tipo) {
     case "ponerHecho":
-      nuevoEstado[accion.id].hecho = true;
+      nuevoEstado[indice].hecho = true;
       return nuevoEstado;
     case "quitarHecho":
-      nuevoEstado[accion.id].hecho = false;
+      nuevoEstado[indice].hecho = false;
       return nuevoEstado;
     case "ponerTareas":
       return accion.tareas;
+    case "borrarTarea":
+      return estado.filter(tarea => tarea.id !== accion.id);
     default:
       throw new Error(`Acción desconocida: ${accion.tipo}`);
   }
@@ -61,7 +64,7 @@ function App() {
   const [toggle, setToggle] = React.useReducer(reductor, estadoInicial);
 
   React.useEffect(function(){
-    fetch(URL)
+    fetch(`${baseURL}/tareas`)
       .then((response) => response.json())
       .then((tareas) => ponerTareas({ tipo: "ponerTareas", tareas }));
   }, []);

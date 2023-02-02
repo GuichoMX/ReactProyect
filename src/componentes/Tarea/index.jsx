@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 import "./index.css"
 import { Tarea as TareaShape } from "../../prop-types";
+import { baseURL } from "../../constantes";
 
 function Tarea(props) {
     const classNameHecho = props.hecho ? "done" : "";
@@ -11,26 +12,43 @@ function Tarea(props) {
         <input 
           type="checkbox"
           checked={props.hecho}
-          onChange={(evt) => {
-            props.ponerTareas({ tipo: props.hecho ? "quitarHecho" : "ponerHecho", id: props.id });
+          onChange={() => {
+            fetch(`${baseURL}/tareas/${props.id}`,
+              {
+                method: "PATCH",
+                headers: {
+                  'Content-Type': "application/json"
+                },
+                body: JSON.stringify({ hecho: !props.hecho })
+              }
+            )
+            .then(response => response.json())
+            .then(tarea => {
+              props.ponerTareas({ tipo: !tarea.hecho ? "quitarHecho" : "ponerHecho", id: props.id });
+            })
           }}
         />
-        <span
-          className={classNameHecho}
-          draggable
-          onDragStart={e => console.log('onDragStart')}
-          onDragEnd={e => console.log('onDragEnd')}
-        >
+        <span className={classNameHecho} >
           {props.titulo}
         </span>
         <span className={`secondary-text ${classNameHecho}`}>{props.hora}</span>
+        <span
+          className="close"
+          onClick={() => {
+            fetch(`${baseURL}/tareas/${props.id}`, { method: "DELETE" })
+            .then(() => {
+              props.ponerTareas({ tipo: "borrarTarea", id: props.id })
+            })
+          }}
+        >
+          X
+        </span>
       </li>
     )
   }
 
 Tarea.propTypes = {
   ...TareaShape,
-  id: PropTypes.number.isRequired,
   ponerTareas: PropTypes.func.isRequired,
 };
 

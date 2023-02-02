@@ -1,0 +1,28 @@
+{
+  "tareas": [
+    {
+      "id": 1,
+      "titulo": "Explicar JSX",
+      "hecho": false,
+      "hora": "7:00 am"
+    },
+    {
+      "id": 2,
+      "titulo": "Explicar a profundidad VirtualDOM",
+      "hecho": false,
+      "hora": "9:25 am"
+    },
+    {
+      "id": 3,
+      "titulo": "Explicar qué es un componente",
+      "hecho": false,
+      "hora": "11:05 am"
+    },
+    {
+      "id": 4,
+      "titulo": "Explicar qué es una propiedad (prop)",
+      "hecho": false,
+      "hora": "2:13 pm"
+    }
+  ]
+}

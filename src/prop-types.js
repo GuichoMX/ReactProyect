@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 
 const Tarea = {
+    id: PropTypes.number.isRequired,
     titulo: PropTypes.string.isRequired,
     hecho: PropTypes.bool.isRequired,
     hora: PropTypes.string.isRequired,

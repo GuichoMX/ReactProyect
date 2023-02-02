@@ -8,12 +8,11 @@ function ListaTareas(props) {
   return (
     <ul className="no-bullets">
       {
-        props.tareas.map((elemento, indice) => {
+        props.tareas.map((elemento) => {
           return (
             <Tarea
-              key={indice}
+              key={elemento.id}
               ponerTareas={props.ponerTareas}
-              id={indice}
               {...elemento}
             />
           )

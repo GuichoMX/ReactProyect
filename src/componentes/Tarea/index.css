@@ -4,10 +4,15 @@
 
 .li {
     margin: 0.5em 0;
+    display: grid;
+    grid-auto-flow: column;
 }
 
 .secondary-text {
-    float: right;
     font-size: .75em;
     opacity: .5;
+}
+
+.close {
+    cursor: pointer;
 }
