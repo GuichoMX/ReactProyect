@@ -1,29 +1,8 @@
 import React from "react";
 import Cuerpo from "./componentes/Cuerpo";
 import Encabezado from "./componentes/Encabezado";
+import { URL } from "./constantes";
 
-const tareasIniciales = [
-  {
-    titulo: "Explicar JSX",
-    hecho: true,
-    hora: "7:00 am",
-  },
-  {
-    titulo: "Explicar a profundidad VirtualDOM",
-    hecho: false,
-    hora: "9:25 am"
-  },
-  {
-    titulo: "Explicar qué es un componente",
-    hecho: true,
-    hora: "11:05 am"
-  },
-  {
-    titulo: "Explicar qué es una propiedad (prop)",
-    hecho: true,
-    hora: "2:13 pm"
-  }
-];
 const reductorTareas = (estado, accion) => {
   const nuevoEstado = [...estado];
 
@@ -34,6 +13,8 @@ const reductorTareas = (estado, accion) => {
     case "quitarHecho":
       nuevoEstado[accion.id].hecho = false;
       return nuevoEstado;
+    case "ponerTareas":
+      return accion.tareas;
     default:
       throw new Error(`Acción desconocida: ${accion.tipo}`);
   }
@@ -76,8 +57,14 @@ const reductor = (estado, accion) => {
 };
 
 function App() {
-  const [tareas, ponerTareas] = React.useReducer(reductorTareas, tareasIniciales);
+  const [tareas, ponerTareas] = React.useReducer(reductorTareas, []);
   const [toggle, setToggle] = React.useReducer(reductor, estadoInicial);
+
+  React.useEffect(function(){
+    fetch(URL)
+      .then((response) => response.json())
+      .then((tareas) => ponerTareas({ tipo: "ponerTareas", tareas }));
+  }, []);
 
   return (
     <div className={`wrapper ${toggle}`}>

@@ -1,4 +1,3 @@
-import React from "react";
 import PropTypes from "prop-types";
 
 import "./index.css"
@@ -31,7 +30,8 @@ function Tarea(props) {
 
 Tarea.propTypes = {
   ...TareaShape,
-  ponerTareas: PropTypes.func.isRequired
+  id: PropTypes.number.isRequired,
+  ponerTareas: PropTypes.func.isRequired,
 };
 
 export default Tarea;
