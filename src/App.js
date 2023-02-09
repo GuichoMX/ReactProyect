@@ -1,6 +1,14 @@
 import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import AcercaDe from "./componentes/AcercaDe";
 import Cuerpo from "./componentes/Cuerpo";
 import Encabezado from "./componentes/Encabezado";
+import Menu from "./componentes/Menu";
+import Error404 from "./componentes/Error404";
+import PaginaPrincipal from "./componentes/PaginaPrincipal";
+import Detalles from "./componentes/Detalles"
+
 import { baseURL } from "./constantes";
 
 const reductorTareas = (estado, accion) => {
@@ -71,8 +79,19 @@ function App() {
 
   return (
     <div className={`wrapper ${toggle}`}>
-      <Encabezado tareas={tareas} toggle={toggle} setToggle={setToggle} />
-      <Cuerpo tareas={tareas} ponerTareas={ponerTareas} />
+      <Menu />
+      <Routes>
+        <Route path="/" element={<PaginaPrincipal />} />
+        <Route path="/tareas" element={
+          <>
+            <Encabezado tareas={tareas} toggle={toggle} setToggle={setToggle} />
+            <Cuerpo tareas={tareas} ponerTareas={ponerTareas} />
+          </>
+        }/>
+        <Route path="/tareas/:id" element={<Detalles tareas={tareas} />} />
+        <Route path="/acercade" element={<AcercaDe />} />
+        <Route path="*" element={<Error404 />} />
+      </Routes>
     </div>
   );
 }

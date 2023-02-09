@@ -1,28 +1,34 @@
 {
   "tareas": [
     {
-      "id": 1,
-      "titulo": "Explicar JSX",
-      "hecho": false,
-      "hora": "7:00 am"
-    },
-    {
       "id": 2,
       "titulo": "Explicar a profundidad VirtualDOM",
       "hecho": false,
-      "hora": "9:25 am"
+      "hora": "9:25 am",
+      "detalles": [
+        "Entender fiber",
+        "Enter las entrañas de React (scheduling y reconciliation)"
+      ]
     },
     {
       "id": 3,
       "titulo": "Explicar qué es un componente",
       "hecho": false,
-      "hora": "11:05 am"
+      "hora": "11:05 am",
+      "detalles": [
+        "Reutilización a lo largo de mi aplicación",
+        "Son como legos"
+      ]
     },
     {
       "id": 4,
       "titulo": "Explicar qué es una propiedad (prop)",
       "hecho": false,
-      "hora": "2:13 pm"
+      "hora": "2:13 pm",
+      "detalles": [
+        "Hacer mención de la diferencia con los atributos de HTML",
+        "Estas no pueden ser modificadas por el hijo"
+      ]
     }
   ]
 }

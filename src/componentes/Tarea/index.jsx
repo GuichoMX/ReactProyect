@@ -3,8 +3,11 @@ import PropTypes from "prop-types";
 import "./index.css"
 import { Tarea as TareaShape } from "../../prop-types";
 import { baseURL } from "../../constantes";
+import { useNavigate } from "react-router-dom";
 
 function Tarea(props) {
+    const navigate = useNavigate();
+    
     const classNameHecho = props.hecho ? "done" : "";
 
     return (
@@ -32,6 +35,13 @@ function Tarea(props) {
           {props.titulo}
         </span>
         <span className={`secondary-text ${classNameHecho}`}>{props.hora}</span>
+        <button
+          onClick={() => {
+            navigate(`/tareas/${props.id}`);
+          }}
+        >
+          Detalles
+        </button>
         <span
           className="close"
           onClick={() => {
