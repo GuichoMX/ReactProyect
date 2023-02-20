@@ -57,7 +57,7 @@ const CreateProperty = (props) => {
                                     <label for="inNombre">Status:</label>
                                     <input type="text" class="form-control" 
                                     id="inputAddress4" 
-                                    placeholder="Disponible"
+                                    placeholder="Ocupado"
                                     disabled
                                     />
 
