@@ -15,24 +15,3 @@ code {
 h1 {
   margin-top: 0;
 }
-
-.dark {
-  background-color: black;
-  color: white;
-}
-
-.medium {
-  background-color: grey;
-  color: #ccc;
-}
-
-.light {
-  background-color: white;
-  color: black;
-}
-
-.wrapper {
-  height: 100vh;
-  margin: 5em auto 0;
-  width: 50vw;
-}

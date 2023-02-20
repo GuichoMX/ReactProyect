@@ -29,6 +29,75 @@
         "Hacer mención de la diferencia con los atributos de HTML",
         "Estas no pueden ser modificadas por el hijo"
       ]
+    },
+    {
+      "hecho": false,
+      "titulo": "this is a test",
+      "hora": "5:16 PM",
+      "detalles": [
+        "this is a test",
+        " test2",
+        " test3"
+      ],
+      "id": 5
+    }
+  ],
+  "properties": [
+    {
+      "id": 1,
+      "name": "Mi propiedad #1",
+      "address": "sm 11 mz 80 lote 69 Residencial puerta del sol Calle 01",
+      "user": "Luis Escobedo Trenado",
+      "hecho": "Disponible",
+      "details": [
+        "Entender fiber",
+        "Enter las entrañas de React (scheduling y reconciliation)"
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Mi propiedad #2",
+      "address": "sm 24 mz 74 lote 06 Residencial puerta de la luna Calle 23",
+      "user": "Belem Vargas Trujillo",
+      "hecho": "Disponible",
+      "details": [
+        "Entender fiber",
+        "Enter las entrañas de React (scheduling y reconciliation)"
+      ]
+    },
+    {
+      "hecho": "Disponible",
+      "name": "Mi propiedad #3",
+      "address": "sm 33 mz 63 lote 09 Residencial puerta la nube Calle 75",
+      "user": "Brenda Escobedo Trenado",
+      "details": [
+        "1",
+        "2",
+        "3"
+      ],
+      "id": 3
+    }
+  ],
+  "users": [
+    {
+      "id": 1,
+      "fullName": "Carlos Tun Perez",
+      "assignedProperty": "Mi propiedad #2",
+      "age": 26,
+      "state": "Cancún",
+      "city": "México",
+      "cellphone": "9981864348",
+      "referenceNumber": "9982602501"
+    },
+    {
+      "id": 2,
+      "fullName": "Brenda Escobedo Trenado",
+      "assignedProperty": "Mi propiedad #1",
+      "age": 23,
+      "state": "Cancún",
+      "city": "México",
+      "cellphone": "9988776655",
+      "referenceNumber": "9903672817"
     }
   ]
 }

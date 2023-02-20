@@ -1,0 +1,18 @@
+.done {
+    text-decoration: line-through;
+}
+
+.li {
+    margin: 0.5em 0;
+    display: grid;
+    grid-auto-flow: column;
+}
+
+.secondary-text {
+    font-size: .75em;
+    opacity: .5;
+}
+
+.close {
+    cursor: pointer;
+}

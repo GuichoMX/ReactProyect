@@ -1,0 +1,177 @@
+.no-bullets {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+  /* Asigna color fijo al navbar */
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    background-color: white;
+  }
+
+  #header{
+    background: rgba(0, 0, 0, 0.9);
+    padding: 12px 0;
+  }
+
+
+  /* Hero de propiedades */
+
+  .hero-propiedades {
+    width: 80%;
+    height: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: url("../../assets/img/fondo.jpg") center;
+    background-size: cover;
+  }
+  
+  .hero-propiedades .hero-contenedor {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-propiedades h1{
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  /* Sección de propiedades */
+
+  section {
+    overflow: hidden;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+  }
+
+  .propiedades-caja {
+    color: #444444;
+    box-shadow: 0 0 30px rgba(119, 120, 121, 0.6);
+    height: 100vw;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 50px;
+    overflow-y: scroll;
+  }
+
+.propiedades .contenido-propiedades {
+  display: flex;
+  flex-direction: row;
+  color: #444444;
+  box-shadow: 0 0 30px rgba(119, 120, 121, 0.6);
+  padding: 20px;
+  margin: 20px;
+  height: 250px;
+}
+
+.propiedades .propiedades-caja .propiedades-params{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.propiedades .propiedades-caja .casa-img{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 85%;
+  width: 20%;
+  padding: 30px 0;
+}
+
+.propiedades .propiedades-caja .casa-img img{
+  height: 100%;
+  width: 100%;
+}
+
+.casa-contenido{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.casa-contenido .contenido-izquierda,.contenido-derecha{
+  padding: 20px;
+}
+
+.casa-contenido label{
+  margin: 5px;
+}
+
+.casa-contenido .contenido-izquierda{
+  width: 60%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.casa-contenido .contenido-izquierda .espacio{
+  margin-top: 20px;
+  height: 40px;
+}
+
+.casa-contenido .contenido-izquierda input{
+  width: 100%;
+}
+
+.casa-contenido .contenido-derecha{
+  width: 40%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.casa-contenido .contenido-derecha input{
+  width: 100%;
+}
+
+.btnEdicion{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0;
+  text-align: center;
+}
+
+.btnEdicion a{
+  display: flex;
+  align-self: center;
+  margin: 0 10px;
+  color: #1E1E92;
+}
+
+
+.btnEdicion button{
+  margin: 0 10px;
+  padding: 2px 10px;
+  width: 100px;
+  border-radius: 15px;
+  background-color: #1E1E92;
+  color: white;
+  border: none;
+  border-bottom: 4px solid black;
+}
+
+.boton:active{
+  background-color: #1E3F92;
+  width: 95px;
+}

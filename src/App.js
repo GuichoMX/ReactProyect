@@ -5,10 +5,20 @@ import CreateTarea from "./componentes/CreateTarea";
 import AcercaDe from "./componentes/AcercaDe";
 import Cuerpo from "./componentes/Cuerpo";
 import Encabezado from "./componentes/Encabezado";
-import Menu from "./componentes/Menu";
 import Error404 from "./componentes/Error404";
 import PaginaPrincipal from "./componentes/PaginaPrincipal";
 import Detalles from "./componentes/Detalles"
+
+import Header from "./componentes/Header"
+import Body from "./componentes/Body"
+import Details from "./componentes/Details"
+import CreateProperty from "./componentes/CreateProperty";
+import Navbar from "./componentes/Navbar/index"
+
+import HeaderUser from "./componentes/HeaderUser"
+import BodyUser from "./componentes/BodyUser"
+import DetailsUser from "./componentes/DetailsUser"
+import CreateUser from "./componentes/CreateUser";
 
 import { baseURL } from "./constantes";
 
@@ -25,6 +35,8 @@ const reductorTareas = (estado, accion) => {
       return nuevoEstado;
     case "ponerTareas":
       return accion.tareas;
+    case "ponerTarea":
+      return [...estado].concat([accion.tarea]);
     case "borrarTarea":
       return estado.filter(tarea => tarea.id !== accion.id);
     default:
@@ -32,45 +44,58 @@ const reductorTareas = (estado, accion) => {
   }
 };
 
-const estadoInicial = "light";
-const calcularSiguienteEstado = (estado) => {
-  switch (estado) {
-      case "light":
-          return "medium";
-      case "medium":
-          return "dark";
-      case "dark":
-          return "light";
-      default:
-          return "";
-  }
-};
-const calcularPrevioEstado = (estado) => {
-  switch (estado) {
-      case "light":
-          return "dark";
-      case "medium":
-          return "light";
-      case "dark":
-          return "medium";
-      default:
-          return "";
-  }
-};
-const reductor = (estado, accion) => {
+const propertiesReducer = (estado, accion) => {
+  const nuevoEstado = [...estado];
+  const indice = estado.findIndex(elemento => elemento.id === accion.id);
+
   switch(accion.tipo) {
-    case "siguiente":
-      return calcularSiguienteEstado(estado);
-    case "previo":
-      return calcularPrevioEstado(estado);
+    case "ponerHecho":
+      nuevoEstado[indice].hecho = "Disponible";
+      return nuevoEstado;
+    case "quitarHecho":
+      nuevoEstado[indice].hecho = "Ocupado";
+      return nuevoEstado;
+    case "addProperties":
+      return accion.properties;
+    case "addProperty":
+      return [...estado].concat([accion.property]);
+    case "deleteProperty":
+      return estado.filter(property => property.id !== accion.id);
     default:
-      throw new Error(`Acción desconocida: ${accion.tipo}`)
+      throw new Error(`Acción desconocida: ${accion.tipo}`);
+  }
+};
+
+const usersReducer = (estado, accion) => {
+
+  switch(accion.tipo) {
+    case "addUsers":
+      return accion.users;
+    case "addUser":
+      return [...estado].concat([accion.user]);
+    case "deleteUser":
+      return estado.filter(user => user.id !== accion.id);
+    default:
+      throw new Error(`Acción desconocida: ${accion.tipo}`);
   }
 };
 
 function App() {
   const [tareas, ponerTareas] = React.useReducer(reductorTareas, []);
-  const [toggle, setToggle] = React.useReducer(reductor, estadoInicial);
+  const [properties, addProperties] = React.useReducer(propertiesReducer, [])
+  const [users, addUsers] = React.useReducer(usersReducer, [])
+
+  React.useEffect(function(){
+    fetch(`${baseURL}/users`)
+      .then((response) => response.json())
+      .then((users) => addUsers({ tipo: "addUsers", users }));
+  }, []);
+
+  React.useEffect(function(){
+    fetch(`${baseURL}/properties`)
+      .then((response) => response.json())
+      .then((properties) => addProperties({ tipo: "addProperties", properties }));
+  }, []);
 
   React.useEffect(function(){
     fetch(`${baseURL}/tareas`)
@@ -79,19 +104,35 @@ function App() {
   }, []);
 
   return (
-    <div className={`wrapper ${toggle}`}>
-      <Menu />
+    <div className={`wrapper`}>
+      <Navbar />
       <Routes>
         <Route path="/" element={<PaginaPrincipal />} />
         <Route path="/tareas" element={
           <>
-            <Encabezado tareas={tareas} toggle={toggle} setToggle={setToggle} />
+            <Encabezado tareas={tareas}/>
             <Cuerpo tareas={tareas} ponerTareas={ponerTareas} />
           </>
         }/>
         <Route path="/tareas/:id" element={<Detalles tareas={tareas} />} />
+        <Route path="/properties" element={
+          <>
+            <Header properties={properties}/>
+            <Body properties={properties} addProperties={addProperties} />
+          </>
+        }/>
+        <Route path="/properties/:id" element={<Details properties={properties} />} />
+        <Route path="/users" element={
+          <>
+            <HeaderUser users={users}/>
+            <BodyUser users={users} addUsers={addUsers} />
+          </>
+        }/>
+        <Route path="/users/:id" element={<DetailsUser users={users} />} />
         <Route path="/acercade" element={<AcercaDe />} />
-        <Route path="/createtarea" element={<CreateTarea />} />
+        <Route path="/createtarea" element={<CreateTarea ponerTareas={ponerTareas}/>} />
+        <Route path="/createproperty" element={<CreateProperty addProperties={addProperties}/>} />
+        <Route path="/createuser" element={<CreateUser addUsers={addUsers}/>} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </div>

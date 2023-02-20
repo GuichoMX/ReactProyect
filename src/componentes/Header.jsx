@@ -1,9 +1,10 @@
 import PropTypes from "prop-types";
 import { Link } from "react-router-dom";
-import { TareaType } from "../prop-types";
+
+import { PropertyType } from "../prop-types";
 import Titulo from "./Titulo";
 
-function Encabezado(props) {
+function Header(props) {
   // fecha = miércoles, 25 de enero de 2023
   let fecha = new Intl.DateTimeFormat('es-MX', { dateStyle: 'full', timeZone: 'America/Mexico_City' }).format(new Date());
   // fecha = Miércoles, 25 de enero de 2023
@@ -12,14 +13,14 @@ function Encabezado(props) {
   return (
     <>
       <Titulo mensaje={fecha} />
-      <Titulo subtitulo mensaje={`${props.tareas.length} tareas`} />
-      <button><Link to="/createtarea">Create Task</Link></button>
+      <Titulo subtitulo mensaje={`${props.properties.length} Propiedades`} />
+      <button><Link to="/createproperty">Create Property</Link></button>
     </>
   )
 };
 
-Encabezado.propTypes = {
-  tareas: PropTypes.arrayOf(TareaType).isRequired,
+Header.propTypes = {
+  properties: PropTypes.arrayOf(PropertyType).isRequired,
 };
 
-export default Encabezado;
+export default Header;

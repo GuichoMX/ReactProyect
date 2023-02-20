@@ -1,0 +1,292 @@
+  /* Asigna color fijo al navbar */
+  .main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+  }
+
+  #header{
+    background: rgba(0, 0, 0, 0.9);
+    padding: 12px 0;
+  }
+
+
+  /* Hero de propiedades */
+
+  .hero-propiedades {
+    width: 80%;
+    height: 70px;
+    margin-left: 10%;
+    margin-right: 10%;
+    background: url("../../assets/img/fondo.jpg") center;
+    background-size: cover;
+  }
+  
+  .hero-propiedades .hero-contenedor {
+    height: 70px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .hero-propiedades h1{
+    margin: 0;
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 56px;
+    text-transform: uppercase;
+    color: white;
+  }
+  
+  /* Sección de usuarios */
+
+  .usuarios-caja {
+    color: #444444;
+    box-shadow: 0 0 30px rgba(119, 120, 121, 0.6);
+    height: 100vw;
+    margin-left: 10%;
+    margin-right: 10%;
+    padding: 50px;
+  }
+
+.usuarios .contenido-propiedades {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  color: #444444;
+  box-shadow: 0 0 30px rgba(119, 120, 121, 0.6);
+  padding: 20px;
+  margin: 20px;
+  height: 200px;
+}
+
+.usuarios .usuarios-caja .propiedades-params{
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px 300px;
+  place-items:  center;
+  height: 100%;
+}
+
+.usuarios .usuarios-caja .usuario-img{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 110px;
+  width: 150px;
+  align-self: center;
+}
+
+.usuarios .usuarios-caja .usuario-img img{
+  height: 100%;
+  width: 100%;
+}
+
+.casa-contenido{
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+.casa-contenido .contenido-izquierda,.contenido-derecha{
+  padding: 20px;
+}
+
+.casa-contenido label{
+  margin: 5px;
+  width: auto;
+}
+
+.casa-contenido .contenido-derecha{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}
+
+.casa-contenido .contenido-derecha input{
+  width: 100%;
+}
+
+.btnEdicion{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 10px;
+  padding: 0;
+  text-align: center;
+  height: 30px;
+}
+
+.btnEdicion a{
+  display: flex;
+  color: #1E1E92;
+  align-self: center;
+  margin: 5px;
+}
+
+.btnEdicion iconify-icon{
+  display: flex;
+  color: #1E1E92;
+  align-self: center;
+}
+
+.btnEdicion button{
+  margin: 0 2px;
+  width: 100px;
+  border-radius: 15px;
+  background-color: #1E1E92;
+  color: white;
+  border: none;
+  border-bottom: 4px solid black;
+}
+
+.boton:active{
+  background-color: #1E3F92;
+  width: 95px;
+}
+
+/* Responsive usuarios */
+
+/* Version telefono */
+@media screen and (max-width:480px) {
+  .usuarios .usuarios-caja .propiedades-params{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px 300px;
+    place-items:  center;
+    height: 100%;
+  }
+}
+
+/* Version tablet */
+@media screen and (max-width:768px) {
+  .usuarios .usuarios-caja .propiedades-params{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-template-rows: 300px 300px 300px 300px 300px 300px 300px 300px 300px;
+    place-items:  center;
+    height: 100%;
+  }
+}
+
+/* ---------------------------------------- Details User ---------------------------------------- */
+.usuarios .contenido-propiedades-user-detail {
+  display: grid;
+  flex-direction: row;
+  justify-content: center;
+  align-content: center;
+  color: #444444;
+  box-shadow: 0 0 30px rgba(119, 120, 121, 0.6);
+  padding: 20px;
+  margin: 20px;
+  height: 250px;
+}
+
+.usuarios .usuarios-caja .propiedades-params-user-detail{
+  display: flex;
+  flex-direction: column;
+  place-items:  top;
+  height: 100%;
+  align-items: center;
+}
+
+.usuarios .usuarios-caja .propiedades-params-user-detail button{
+text-decoration: none;
+margin: 0 2px;
+height: 30px;
+width: 100px;
+border-radius: 15px;
+background-color: #1E1E92;
+color: white;
+border: none;
+border-bottom: 4px solid black;
+}
+
+.usuarios .usuarios-caja .propiedades-params-user-detail a{
+  color: white;
+}
+
+.usuarios .usuarios-caja .usuario-img{
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 110px;
+  width: 150px;
+  align-self: center;
+}
+
+.usuarios .usuarios-caja .usuario-img img{
+  height: 100%;
+  width: 100%;
+}
+
+.casa-contenido-user-detail{
+  display: grid;
+  flex-direction: row;
+  height: 100%;
+  width: 100%;
+}
+
+
+.casa-contenido-user-detail .contenido-izquierda,.contenido-user-detail form{
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  grid-template-rows: auto auto auto auto;
+  justify-content: space-evenly;
+}
+
+.casa-contenido-user-detail label{
+  margin: 5px;
+  width: auto;
+}
+
+.usuarios .contenido-user-detail{
+  width: 100vh;
+  height: 100%;
+}
+
+
+/* ---------------------------- HERO TASKS ---------------------------- */
+
+.hero-tasks {
+  width: 27%;
+  height: 70px;
+  margin-left: 10%;
+  margin-right: 10%;
+  background: url("../../assets/img/fondo.jpg") center;
+  background-size: cover;
+  align-self: center;
+}
+
+.hero-tasks .hero-tasks-contenedor {
+  height: 70px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+
+.hero-tasks h1{
+  margin: 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: white;
+}
+
+.main-tasks{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+}

@@ -7,17 +7,30 @@ import { TareaType } from "../../prop-types";
 function ListaTareas(props) {
   return (
     <ul className="no-bullets">
-      {
-        props.tareas.map((elemento) => {
-          return (
-            <Tarea
-              key={elemento.id}
-              ponerTareas={props.ponerTareas}
-              {...elemento}
-            />
-          )
-        })
-      }
+      <main class="main">
+        <div class="hero-tasks">
+          <div class="hero-tasks-contenedor">
+            <h1>Tareas</h1>
+          </div>
+        </div>
+        <section id="propiedades" class="propiedades">
+          <div class="propiedades-caja">
+            <div class="propiedades-params" id="contenidoMain">
+              {
+                props.tareas.map((elemento) => {
+                  return (
+                    <Tarea
+                      key={elemento.id}
+                      ponerTareas={props.ponerTareas}
+                      {...elemento}
+                    />
+                  )
+                })
+              }
+            </div>
+          </div>
+        </section>
+      </main>
     </ul>
   )
 };

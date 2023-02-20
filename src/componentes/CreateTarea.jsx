@@ -1,12 +1,19 @@
 import React from "react";
+import PropTypes from "prop-types"
 import { baseURL } from "../constantes";
+import { useNavigate } from "react-router-dom";
 
 const CreateTarea = (props) => {
     const [titulo, ponerTitulo] = React.useState("");
     const [hora, ponerHora] = React.useState("");
     const [detalles, ponerDetalles] = React.useState("");
+
+    const navigate = useNavigate();
+
+
+    return(
     <form
-    onSubmit={ e=> {
+    onSubmit={ e => {
         e.preventDefault();
 
         fetch(`${baseURL}/tareas`,{
@@ -22,7 +29,10 @@ const CreateTarea = (props) => {
             })
         })
         .then(response => response.json())
-        .then
+        .then(tarea => {
+            props.ponerTareas({tipo: "ponerTarea", tarea});
+            navigate("/tareas")
+        })
     }}
     >
         <div class="form-group">
@@ -56,6 +66,11 @@ const CreateTarea = (props) => {
         <button type="submit" class="btn btn-primary">Create task</button>
         
     </form>
+    )
 }
+
+CreateTarea.propTypes = {
+    ponerTareas: PropTypes.func.isRequired,
+  };
 
 export default CreateTarea;
