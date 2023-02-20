@@ -76,6 +76,16 @@
         "3"
       ],
       "id": 3
+    },
+    {
+      "hecho": "Disponible",
+      "name": "",
+      "address": "",
+      "user": "",
+      "details": [
+        ""
+      ],
+      "id": 4
     }
   ],
   "users": [
