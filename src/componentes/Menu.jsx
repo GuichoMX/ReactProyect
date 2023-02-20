@@ -13,7 +13,7 @@ const Menu = () => (
                 <Link to="/acercade">Acerca de</Link>
             </li>
             <li>
-                <Link to="/rutaquenoexiste">Ruta que no existe</Link>
+                <Link to="/createtarea">Crear nueva tarea</Link>
             </li>
             <li>
                 <Link to="/otrarutaquenoexiste">Otra ruta que no existe</Link>

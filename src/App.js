@@ -1,6 +1,7 @@
 import React from "react";
 import { Routes, Route } from "react-router-dom";
 
+import CreateTarea from "./componentes/CreateTarea";
 import AcercaDe from "./componentes/AcercaDe";
 import Cuerpo from "./componentes/Cuerpo";
 import Encabezado from "./componentes/Encabezado";
@@ -90,6 +91,7 @@ function App() {
         }/>
         <Route path="/tareas/:id" element={<Detalles tareas={tareas} />} />
         <Route path="/acercade" element={<AcercaDe />} />
+        <Route path="/createtarea" element={<CreateTarea />} />
         <Route path="*" element={<Error404 />} />
       </Routes>
     </div>
