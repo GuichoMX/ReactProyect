@@ -35,8 +35,8 @@ function Property(props) {
                 <form action="">
                   <label for="inNombre">Usuario</label>
                   <input id="inUsuario" type="text" placeholder={props.user} disabled/>
-                    <label for="inDireccion">Estado</label>
-                    <input id="inDireccion" type="text" placeholder={props.hecho} disabled/>
+                    <label for="inDireccion">Disponibilidad</label>
+                    <input id="inDireccion" type="text" placeholder={props.hecho ? "Ocupado" : "Disponible"} disabled/>
                     </form>
                     <div class="btnEdicion">
                           <button class="boton" id="btnsubmit" type="submit"
@@ -64,7 +64,8 @@ function Property(props) {
                     headers: {
                       'Content-Type': "application/json"
                     },
-                    body: props.hecho ? JSON.stringify({ hecho: "Disponible" }) : JSON.stringify({ hecho: "Disponible" })
+                    body: JSON.stringify({ hecho: !props.hecho })
+                    //body: props.hecho ? JSON.stringify({ hecho: "Disponible" }) : JSON.stringify({ hecho: "Ocupado" })
                   }
                 )
                   .then(response => response.json())
@@ -73,7 +74,9 @@ function Property(props) {
                   })
               }}
             />
+            <label for="inNombre">¿Esta ocupado?</label>
           </li>
+          
           )
   }
 

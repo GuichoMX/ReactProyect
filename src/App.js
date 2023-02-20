@@ -50,10 +50,10 @@ const propertiesReducer = (estado, accion) => {
 
   switch(accion.tipo) {
     case "ponerHecho":
-      nuevoEstado[indice].hecho = "Disponible";
+      nuevoEstado[indice].hecho = true;
       return nuevoEstado;
     case "quitarHecho":
-      nuevoEstado[indice].hecho = "Ocupado";
+      nuevoEstado[indice].hecho = false;
       return nuevoEstado;
     case "addProperties":
       return accion.properties;

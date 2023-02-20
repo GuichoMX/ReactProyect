@@ -238,8 +238,9 @@ border-bottom: 4px solid black;
 
 .casa-contenido-user-detail .contenido-izquierda,.contenido-user-detail form{
   display: grid;
-  grid-template-columns: auto auto auto auto;
-  grid-template-rows: auto auto auto auto;
+  grid-template-columns: auto auto;
+  grid-template-rows: auto auto auto auto auto auto auto auto;
+  grid-auto-flow: column;
   justify-content: space-evenly;
 }
 

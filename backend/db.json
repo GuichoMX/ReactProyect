@@ -48,7 +48,7 @@
       "name": "Mi propiedad #1",
       "address": "sm 11 mz 80 lote 69 Residencial puerta del sol Calle 01",
       "user": "Luis Escobedo Trenado",
-      "hecho": "Disponible",
+      "hecho": true,
       "details": [
         "Entender fiber",
         "Enter las entrañas de React (scheduling y reconciliation)"
@@ -59,14 +59,14 @@
       "name": "Mi propiedad #2",
       "address": "sm 24 mz 74 lote 06 Residencial puerta de la luna Calle 23",
       "user": "Belem Vargas Trujillo",
-      "hecho": "Disponible",
+      "hecho": true,
       "details": [
         "Entender fiber",
         "Enter las entrañas de React (scheduling y reconciliation)"
       ]
     },
     {
-      "hecho": "Disponible",
+      "hecho": true,
       "name": "Mi propiedad #3",
       "address": "sm 33 mz 63 lote 09 Residencial puerta la nube Calle 75",
       "user": "Brenda Escobedo Trenado",

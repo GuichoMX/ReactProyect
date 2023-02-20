@@ -1,5 +1,5 @@
 import React from "react";
-import PropTypes from "prop-types"
+// import PropTypes from "prop-types"
 import { baseURL } from "../constantes";
 import { useNavigate } from "react-router-dom";
 
@@ -32,27 +32,35 @@ const CreateProperty = (props) => {
                                             addName(evt.target.value)
                                         }}
                                     />
-                                    <label for="inDireccion">Propiedad asignada:</label>
+                                    <label for="inDireccion">Dirección:</label>
                                     <input type="text" class="form-control" id="inputAddress2" placeholder="Address here"
                                         value={address}
                                         onChange={evt => {
                                             addAddress(evt.target.value)
                                         }} />
 
-                                    <label for="inNombre">Age:</label>
+                                    <label for="inNombre">Usuario asignado:</label>
                                     <input type="text" class="form-control" id="inputAddress3" placeholder="User Assigned here"
                                         value={user}
                                         onChange={evt => {
                                             addUser(evt.target.value)
                                         }} />
 
-                                    <label for="inNombre">State:</label>
+                                    <label for="inNombre">Comentarios:</label>
                                     <input type="text" class="form-control" id="inputAddress4" placeholder="Details here"
                                         value={details}
                                         onChange={evt => {
                                             addDetails(evt.target.value)
                                         }}
                                     />
+
+                                    <label for="inNombre">Status:</label>
+                                    <input type="text" class="form-control" 
+                                    id="inputAddress4" 
+                                    placeholder="Disponible"
+                                    disabled
+                                    />
+
                                 </form>
                             </div>
                         </div>
