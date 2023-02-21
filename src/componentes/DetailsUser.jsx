@@ -33,6 +33,8 @@ const DetailsUser = (props) => {
                                             <input id="inDireccion" type="text" placeholder={user.assignedProperty} disabled />
                                             <label for="inNombre">Age:</label>
                                             <input id="inNombre" type="text" placeholder={user.age} disabled />
+                                            <label for="inNombre">Genero:</label>
+                                            <input id="inNombre" type="text" placeholder={user.gender} disabled />
                                             <label for="inNombre">State:</label>
                                             <input id="inNombre" type="text" placeholder={user.state} disabled />
                                             <label for="inNombre">City:</label>

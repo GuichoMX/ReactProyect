@@ -5,6 +5,8 @@ import { Property as PropertyShape } from "../../prop-types";
 import { baseURL } from "../../constantes";
 import { useNavigate } from "react-router-dom";
 
+import Casa from "../../assets/img/Propiedades/casaimgPrueba.png"
+
 function Property(props) {
   const navigate = useNavigate();
 
@@ -15,7 +17,7 @@ function Property(props) {
           <li className="li">
                   <div class="contenido-propiedades">
         <div class="casa-img">
-          <img src="../../assets/img/Propiedades/casaimgPrueba.png" alt="Esta es una imagen de una casa"/>
+          <img src={Casa} alt="Esta es una imagen de una casa"/>
         </div>
 
         <div class="casa-contenido">

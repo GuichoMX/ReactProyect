@@ -5,6 +5,9 @@ import { User as UserShape } from "../../prop-types";
 import { baseURL } from "../../constantes";
 import { useNavigate } from "react-router-dom";
 
+import Foto from "../../assets/img/Usuarios/user_male.png"
+import Foto2 from "../../assets/img/Usuarios/user_female.png"
+
 function User(props) {
   const navigate = useNavigate();
 
@@ -14,7 +17,7 @@ function User(props) {
     <li className="li">
       <div class="contenido-propiedades">
         <div class="usuario-img">
-          <img src="../../assets/img/Usuarios/user_male.png" alt="Esta es una imagen de un usuario" href="" />
+          <img src= {props.gender === "Masculino" ? Foto : Foto2 } alt="Esta es una imagen de un usuario" href="" />
         </div>
 
         <div class="casa-contenido">

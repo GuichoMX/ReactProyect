@@ -22,6 +22,7 @@ const User = {
     fullName: PropTypes.string.isRequired,
     assignedProperty: PropTypes.string.isRequired,
     age: PropTypes.number.isRequired,
+    gender: PropTypes.string.isRequired,
     state: PropTypes.string.isRequired,
     city: PropTypes.string.isRequired,
     cellphone: PropTypes.string.isRequired,

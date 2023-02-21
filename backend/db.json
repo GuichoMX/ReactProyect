@@ -76,16 +76,6 @@
         "3"
       ],
       "id": 3
-    },
-    {
-      "hecho": "Disponible",
-      "name": "",
-      "address": "",
-      "user": "",
-      "details": [
-        ""
-      ],
-      "id": 4
     }
   ],
   "users": [
@@ -94,6 +84,7 @@
       "fullName": "Carlos Tun Perez",
       "assignedProperty": "Mi propiedad #2",
       "age": 26,
+      "gender": "Masculino",
       "state": "Cancún",
       "city": "México",
       "cellphone": "9981864348",
@@ -104,6 +95,7 @@
       "fullName": "Brenda Escobedo Trenado",
       "assignedProperty": "Mi propiedad #1",
       "age": 23,
+      "gender": "Femenino",
       "state": "Cancún",
       "city": "México",
       "cellphone": "9988776655",

@@ -2,12 +2,12 @@ import React from "react";
 import PropTypes from "prop-types"
 import { baseURL } from "../constantes";
 import { useNavigate } from "react-router-dom";
-import { Link } from "react-router-dom";
 
 const CreateUser = (props) => {
     const [fullName, addFullName] = React.useState("");
     const [assignedProperty, addAssignedProperty] = React.useState("");
     const [age, addAge] = React.useState("");
+    const [gender, addGender] = React.useState("");
     const [state, addState] = React.useState("");
     const [city, addCity] = React.useState("");
     const [cellphone, addCellphone] = React.useState("");
@@ -48,6 +48,13 @@ const CreateUser = (props) => {
                                             value={age}
                                             onChange={evt => {
                                                 addAge(evt.target.value)
+                                            }}
+                                            />
+                                            <label for="inNombre">Gender:</label>
+                                            <input type="text" class="form-control" id="inputAddress3" placeholder="Gender"
+                                            value={gender}
+                                            onChange={evt => {
+                                                addGender(evt.target.value)
                                             }}
                                             />
                                             <label for="inNombre">State:</label>
@@ -92,6 +99,7 @@ const CreateUser = (props) => {
                                     fullName,
                                     assignedProperty,
                                     age,
+                                    gender,
                                     state,
                                     city,
                                     cellphone,
